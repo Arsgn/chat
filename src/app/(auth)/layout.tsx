@@ -1,0 +1,12 @@
+import LayoutAuth from "@/components/layout/LayoutAuth";
+import { FC, ReactNode } from "react";
+
+interface ILayoutProps {
+    children: ReactNode;
+}
+
+const layout: FC<ILayoutProps> = ({ children }) => {
+    return <LayoutAuth>{children}</LayoutAuth>;
+};
+
+export default layout;
