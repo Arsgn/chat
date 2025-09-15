@@ -37,8 +37,15 @@ export const DirectPage: FC = () => {
           <h1>DirectPage</h1>
           <div className={scss.header}>
             {data?.data.map((item) => (
-              <div key={item.id}>
-                <p>{item.message}</p>
+              <div
+                key={item.id}
+                className={
+                  item.senderId === Number(receiverId)
+                    ? scss.message_left
+                    : scss.message_right
+                }
+              >
+                <div className={scss.bubble}>{item.message}</div>
               </div>
             ))}
           </div>
