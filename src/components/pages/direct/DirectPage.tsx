@@ -35,7 +35,7 @@ export const DirectPage: FC = () => {
       <div className="container">
         <div className={scss.content}>
           <h1>DirectPage</h1>
-            <div className={scss.header}>
+          <div className={scss.header}>
             {data?.data.map((item) => (
               <div key={item.id}>
                 <p>{item.message}</p>
@@ -52,7 +52,7 @@ export const DirectPage: FC = () => {
               </div>
             ))}
           </div>
-        
+
           <div className={scss.input}>
             <input
               type="text"

@@ -6,12 +6,14 @@ import {
   useGetUsersMessageQuery,
   useSendMessageMutation,
 } from "@/api/message";
+import { useRouter } from "next/navigation";
 
 export const MessagePage: FC = () => {
   const { data } = useGetMessagesQuery();
   const { mutateAsync: sendMessage } = useSendMessageMutation();
   const { data: users } = useGetUsersMessageQuery();
   const [message, setMessage] = useState<string>("");
+  const router = useRouter();
   console.log(data);
 
   const handleMessage = async () => {
@@ -30,13 +32,12 @@ export const MessagePage: FC = () => {
       <div className="container">
         <div className={scss.content}>
           <h1>MessagePage</h1>
-          <div>{
-            users?.data.map((item, ind) => (
-              <div key={ind}>
-                {item.fullName}
-              </div>
-            ))
-            }</div>
+          <button onClick={() => router.push("/call")}>Web cam</button>
+          <div>
+            {users?.data.map((item, ind) => (
+              <div key={ind}>{item.fullName}</div>
+            ))}
+          </div>
           <div>
             {data?.data.map((item) => (
               <div key={item.id}>
