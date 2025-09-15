@@ -19,19 +19,12 @@ export const Header: FC = () => {
       <div className="container">
         <div className={scss.content}>
           <h1>Header</h1>
-             <div className={scss.actionButtons}>
-            <button onClick={() => router.push("/user-update")}>
-              Update
-            </button>
-            <button onClick={() => router.push("/message")}>
-              Messages
-            </button>
-            <button onClick={() => router.push("/direct")}>
-              Direct
-            </button>
-            
+          <div className={scss.actionButtons}>
+            <button onClick={() => router.push("/user-update")}>Update</button>
+            <button onClick={() => router.push("/message")}>Messages</button>
+            <button onClick={() => router.push("/direct")}>Direct</button>
           </div>
-          
+
           <div className={scss.userProfile}>
             <div className={scss.avatar}>
               {getInitials(data?.data.fullName || "")}
@@ -42,8 +35,6 @@ export const Header: FC = () => {
               <h1 className={scss.age}>{data?.data.age} years old</h1>
             </div>
           </div>
-
-       
         </div>
       </div>
     </section>

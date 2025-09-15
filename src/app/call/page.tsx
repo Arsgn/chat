@@ -1,6 +1,10 @@
 import { VideoCall } from "@/components/pages/home/video-call/VideoCall";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 
-const page: FC = () => <VideoCall />;
+const page: FC = () => (
+  <Suspense>
+    <VideoCall />
+  </Suspense>
+);
 
 export default page;
